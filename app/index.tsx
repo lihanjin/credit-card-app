@@ -1,15 +1,16 @@
-import { ThemeExample } from '@/components/examples/theme-example';
 import { LanguageSwitcher } from '@/components/features/language-switcher';
-import { useI18n } from '@/hooks/use-i18n';
-import { View } from 'react-native';
+import { PaperExample } from '@/components/examples/paper-example';
+import { View, ScrollView } from 'react-native';
 
 export default function Index() {
-  const { t } = useI18n();
-
   return (
-    <View className="flex-1 justify-center items-center gap-4 px-4">
-      <ThemeExample />
-      <LanguageSwitcher />
+    <View className="flex-1">
+      <ScrollView className="flex-1">
+        <View className="p-4">
+          <LanguageSwitcher />
+        </View>
+        <PaperExample />
+      </ScrollView>
     </View>
   );
 }
