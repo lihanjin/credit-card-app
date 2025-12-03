@@ -1,0 +1,12 @@
+{
+  "home": {
+    "title": "首页",
+    "edit": "编辑 app/index.tsx 来修改此页面。"
+  },
+  "settings": {
+    "title": "设置",
+    "language": "语言",
+    "theme": "主题"
+  }
+}
+

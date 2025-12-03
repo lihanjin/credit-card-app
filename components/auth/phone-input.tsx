@@ -1,15 +1,10 @@
-/**
- * 手机号输入组件
- * 带国家代码选择器
- */
-
 import {
   DEFAULT_COUNTRY,
   useCountryList,
   type CountryCode,
 } from '@/hooks/use-country-list';
-import { useI18n } from '@/hooks/use-i18n';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FlatList, Modal, TouchableOpacity, View } from 'react-native';
 import { IconButton, Text, TextInput, useTheme } from 'react-native-paper';
 
@@ -31,7 +26,7 @@ export function PhoneInput({
   disabled = false,
 }: PhoneInputProps) {
   const theme = useTheme();
-  const { t } = useI18n();
+  const { t } = useTranslation();
 
   // 使用国家列表 Hook，自动处理缓存和加载状态
   const {
@@ -131,7 +126,7 @@ export function PhoneInput({
           >
             <View className="flex-row justify-between items-center px-4 py-2 border-b border-grey-200">
               <Text variant="titleLarge" className="font-semibold">
-                选择国家/地区
+                {t('auth.selectCountry')}
               </Text>
               <IconButton
                 icon="close"
@@ -162,7 +157,9 @@ export function PhoneInput({
               )}
               ListEmptyComponent={
                 <View className="p-8 items-center">
-                  <Text>{loading ? '加载中...' : '暂无数据'}</Text>
+                  <Text>
+                    {loading ? t('common.loading') : t('common.noData')}
+                  </Text>
                 </View>
               }
             />

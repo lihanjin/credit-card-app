@@ -1,10 +1,24 @@
+/**
+ * i18n 配置文件
+ * 支持按模块拆分翻译文件，便于维护和协作
+ */
+
 import { getLocales } from 'expo-localization';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import en from './locales/en-US.json';
-import zh from './locales/zh-CN.json';
-import zhTW from './locales/zh-TW.json';
+// 导入各模块的翻译文件
+import authEn from './locales/en-US/auth.json';
+import businessEn from './locales/en-US/business.json';
+import commonEn from './locales/en-US/common.json';
+
+import authZh from './locales/zh-CN/auth.json';
+import businessZh from './locales/zh-CN/business.json';
+import commonZh from './locales/zh-CN/common.json';
+
+import authZhTW from './locales/zh-TW/auth.json';
+import businessZhTW from './locales/zh-TW/business.json';
+import commonZhTW from './locales/zh-TW/common.json';
 
 // 获取设备语言
 const deviceLocales = getLocales();
@@ -28,16 +42,40 @@ if (deviceLanguage === 'zh') {
 export const supportedLanguages = ['en-US', 'zh-CN', 'zh-TW'] as const;
 export type SupportedLanguage = (typeof supportedLanguages)[number];
 
-// 语言资源
+// 语言资源 - 按命名空间组织
+// 使用命名空间可以更好地组织翻译，同时保持向后兼容
 const resources = {
   'en-US': {
-    translation: en,
+    // 默认命名空间 translation，保持向后兼容
+    translation: {
+      common: commonEn,
+      auth: authEn,
+      business: businessEn,
+    },
+    // 也可以直接使用命名空间访问（可选）
+    common: commonEn,
+    auth: authEn,
+    business: businessEn,
   },
   'zh-CN': {
-    translation: zh,
+    translation: {
+      common: commonZh,
+      auth: authZh,
+      business: businessZh,
+    },
+    common: commonZh,
+    auth: authZh,
+    business: businessZh,
   },
   'zh-TW': {
-    translation: zhTW,
+    translation: {
+      common: commonZhTW,
+      auth: authZhTW,
+      business: businessZhTW,
+    },
+    common: commonZhTW,
+    auth: authZhTW,
+    business: businessZhTW,
   },
 };
 

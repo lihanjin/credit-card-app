@@ -3,8 +3,8 @@
  * 手机号验证码登录
  */
 
-import { useI18n } from '@/hooks/use-i18n';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Alert,
   Linking,
@@ -36,7 +36,7 @@ export function LoginScreen({
   onOtherEmailLogin,
 }: LoginScreenProps) {
   const theme = useTheme();
-  const { t } = useI18n();
+  const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState('');
   const [countryCode, setCountryCode] = useState('+852');
   const [agreed, setAgreed] = useState(false);

@@ -1,0 +1,16 @@
+{
+  "welcome": "欢迎",
+  "hello": "你好",
+  "goodbye": "再见",
+  "ok": "确定",
+  "cancel": "取消",
+  "confirm": "确认",
+  "save": "保存",
+  "delete": "删除",
+  "edit": "编辑",
+  "loading": "加载中...",
+  "error": "错误",
+  "success": "成功",
+  "noData": "暂无数据"
+}
+

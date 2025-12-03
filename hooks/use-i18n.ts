@@ -1,12 +1,12 @@
-import { useTranslation } from 'react-i18next';
 import { supportedLanguages, type SupportedLanguage } from '@/i18n/config';
+import { useTranslation } from 'react-i18next';
 
 /**
  * i18n Hook
  * 提供翻译功能和语言切换
  */
 export function useI18n() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   /**
    * 切换语言
@@ -28,11 +28,9 @@ export function useI18n() {
   };
 
   return {
-    t, // 翻译函数
     changeLanguage, // 切换语言
     currentLanguage, // 当前语言
     isCurrentLanguage, // 检查语言
     supportedLanguages, // 支持的语言列表
   };
 }
-

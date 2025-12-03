@@ -1,0 +1,12 @@
+{
+  "home": {
+    "title": "Home",
+    "edit": "Edit app/index.tsx to edit this screen."
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme"
+  }
+}
+
