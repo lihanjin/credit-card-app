@@ -6,5 +6,7 @@
   },
   // 格式化使用prettier插件
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "tailwindCSS.classAttributes": ["class", "className", "headerClassName"]
+  "tailwindCSS.classAttributes": ["class", "className", "headerClassName"],
+  // 保存自动格式化
+  "editor.formatOnSave": true
 }
