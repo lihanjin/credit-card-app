@@ -3,5 +3,7 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit",
     "source.sortMembers": "explicit"
-  }
+  },
+  // 格式化使用prettier插件
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+web-build/
+.expo/
+app-example/
+expo-env.d.ts
+android/
+ios/
+*.png
+*.jpg
+*.jpeg
+*.gif
