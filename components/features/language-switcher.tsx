@@ -3,8 +3,8 @@ import { Text, TouchableOpacity, View } from 'react-native';
 
 // 语言显示名称映射
 const languageNames: Record<string, string> = {
-  en: 'English',
-  zh: '简体中文',
+  'en-US': 'English',
+  'zh-CN': '简体中文',
   'zh-TW': '繁體中文',
 };
 

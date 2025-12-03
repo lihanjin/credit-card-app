@@ -64,3 +64,4 @@ export async function bindMFACode(data: BindMFACodeReq) {
   return request.post('/admin/mfa/bindMFACode', data);
 }
 
+

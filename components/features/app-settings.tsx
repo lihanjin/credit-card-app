@@ -65,28 +65,28 @@ export function AppSettings() {
         <Text className="text-base font-medium">语言: {language}</Text>
         <View className="flex-row gap-2">
           <TouchableOpacity
-            onPress={() => setLanguage('en')}
+            onPress={() => setLanguage('en-US')}
             className={`px-4 py-2 rounded-lg ${
-              language === 'en' ? 'bg-primary' : 'bg-grey-200'
+              language === 'en-US' ? 'bg-primary' : 'bg-grey-200'
             }`}
           >
             <Text
               className={`font-medium ${
-                language === 'en' ? 'text-white' : 'text-grey-700'
+                language === 'en-US' ? 'text-white' : 'text-grey-700'
               }`}
             >
               English
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setLanguage('zh')}
+            onPress={() => setLanguage('zh-CN')}
             className={`px-4 py-2 rounded-lg ${
-              language === 'zh' ? 'bg-primary' : 'bg-grey-200'
+              language === 'zh-CN' ? 'bg-primary' : 'bg-grey-200'
             }`}
           >
             <Text
               className={`font-medium ${
-                language === 'zh' ? 'text-white' : 'text-grey-700'
+                language === 'zh-CN' ? 'text-white' : 'text-grey-700'
               }`}
             >
               简体中文
@@ -113,4 +113,5 @@ export function AppSettings() {
     </View>
   );
 }
+
 

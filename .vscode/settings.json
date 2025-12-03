@@ -8,5 +8,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "tailwindCSS.classAttributes": ["class", "className", "headerClassName"],
   // 保存自动格式化
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "i18n-ally.localesPaths": ["i18n", "i18n/locales"]
 }

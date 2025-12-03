@@ -6,7 +6,7 @@ import { create } from 'zustand';
 
 interface AppState {
   theme: 'light' | 'dark' | 'auto';
-  language: 'en' | 'zh' | 'zh-TW';
+  language: 'en-US' | 'zh-CN' | 'zh-TW';
   isFirstLaunch: boolean;
   notificationsEnabled: boolean;
 }
@@ -23,7 +23,7 @@ type AppStore = AppState & AppActions;
 
 const initialState: AppState = {
   theme: 'auto',
-  language: 'en',
+  language: 'en-US',
   isFirstLaunch: true,
   notificationsEnabled: true,
 };

@@ -2,14 +2,14 @@ import { getLocales } from 'expo-localization';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import en from './locales/en.json';
+import en from './locales/en-US.json';
+import zh from './locales/zh-CN.json';
 import zhTW from './locales/zh-TW.json';
-import zh from './locales/zh.json';
 
 // 获取设备语言
 const deviceLocales = getLocales();
 const firstLocale = deviceLocales[0];
-const deviceLanguage = firstLocale?.languageCode || 'en';
+const deviceLanguage = firstLocale?.languageCode || 'en-US';
 const deviceRegion = firstLocale?.regionCode || '';
 
 // 根据设备语言和地区确定默认语言
@@ -20,20 +20,20 @@ if (deviceLanguage === 'zh') {
   if (deviceRegion === 'TW' || deviceRegion === 'HK' || deviceRegion === 'MO') {
     defaultLanguage = 'zh-TW';
   } else {
-    defaultLanguage = 'zh';
+    defaultLanguage = 'zh-CN';
   }
 }
 
 // 支持的语言列表
-export const supportedLanguages = ['en', 'zh', 'zh-TW'] as const;
+export const supportedLanguages = ['en-US', 'zh-CN', 'zh-TW'] as const;
 export type SupportedLanguage = (typeof supportedLanguages)[number];
 
 // 语言资源
 const resources = {
-  en: {
+  'en-US': {
     translation: en,
   },
-  zh: {
+  'zh-CN': {
     translation: zh,
   },
   'zh-TW': {
@@ -46,7 +46,7 @@ i18n.use(initReactI18next).init({
   compatibilityJSON: 'v4', // 兼容 React Native
   resources,
   lng: defaultLanguage, // 默认语言
-  fallbackLng: 'en', // 回退语言
+  fallbackLng: 'en-US', // 回退语言
   interpolation: {
     escapeValue: false, // React 已经转义了
   },
