@@ -128,6 +128,9 @@ importers:
         specifier: ^5.0.9
         version: 5.0.9(@types/react@19.1.17)(react@18.2.0)(use-sync-external-store@1.6.0(react@18.2.0))
     devDependencies:
+      '@types/node':
+        specifier: ^24.10.1
+        version: 24.10.1
       '@types/react':
         specifier: ~19.1.0
         version: 19.1.17

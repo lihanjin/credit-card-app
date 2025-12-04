@@ -3,10 +3,15 @@
  * 基于 Axios，适配 React Native/Expo
  */
 
-import type { AxiosError, AxiosResponse, AxiosRequestConfig, InternalAxiosRequestConfig } from 'axios';
+import { useAuthStore } from '@/store/use-auth-store';
+import type {
+  AxiosError,
+  AxiosRequestConfig,
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+} from 'axios';
 import axios from 'axios';
 import * as Localization from 'expo-localization';
-import { useAuthStore } from '@/store/use-auth-store';
 import { encryptParams } from './requestEncrypt';
 
 /** 需要忽略版本号的服务 */
@@ -126,7 +131,8 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response: AxiosResponse) => {
     const { code, msg, data } = response.data;
-    const config: CustomerAxiosRequestConfig & InternalAxiosRequestConfig = response.config;
+    const config: CustomerAxiosRequestConfig & InternalAxiosRequestConfig =
+      response.config;
 
     // 登录态过期
     if (['10001'].includes(String(code))) {
@@ -140,7 +146,10 @@ service.interceptors.response.use(
       return data;
     } else {
       // 判断是否需要跳过报错提示
-      if (config.skipErrorCode?.includes(String(code)) || config.skipCatchSpecialErrors) {
+      if (
+        config.skipErrorCode?.includes(String(code)) ||
+        config.skipCatchSpecialErrors
+      ) {
         // 静默处理错误
       } else {
         // React Native 中可以使用 toast 或 Alert
@@ -153,12 +162,12 @@ service.interceptors.response.use(
   },
   (error: AxiosError) => {
     console.error('响应错误:', error.message);
-    
+
     // 网络错误处理
     if (!error.response) {
       console.error('网络错误，请检查网络连接');
     }
-    
+
     return Promise.reject(error);
   }
 );
@@ -201,4 +210,3 @@ export const request = {
 };
 
 export default service;
-
