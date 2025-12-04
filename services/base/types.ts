@@ -210,6 +210,3 @@ export interface GetTermsRes {
   /** 服务协议 */
   serviceAgreement: TermsVO;
 }
-
-
-

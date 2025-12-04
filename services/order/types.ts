@@ -289,6 +289,3 @@ export interface UpdateOrderReq {
   /** 服务协议提案号 */
   serviceAgreementPno?: string;
 }
-
-
-
