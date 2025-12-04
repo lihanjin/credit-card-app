@@ -109,3 +109,4 @@ export async function getCashExchangeRemittanceKyc(data: GetKycReq) {
 export async function updateOrder(data: UpdateOrderReq) {
   return request.post('/remittance/store/cashExchange/update', data);
 }
+
