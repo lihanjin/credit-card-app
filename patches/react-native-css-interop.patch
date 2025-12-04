@@ -1,0 +1,33 @@
+diff --git a/babel.js b/babel.js
+index d84e52b5ccf59123bb7aee019a853724b20ef99f..f87544b2db6ac3d6a21c28a29fdcd63890d1a214 100644
+--- a/babel.js
++++ b/babel.js
+@@ -1,6 +1,5 @@
+ module.exports = function () {
+-  return {
+-    plugins: [
++  const plugins = [
+       require("./dist/babel-plugin").default,
+       [
+         "@babel/plugin-transform-react-jsx",
+@@ -9,8 +8,18 @@ module.exports = function () {
+           importSource: "react-native-css-interop",
+         },
+       ],
++  ];
++  
+       // Use this plugin in reanimated 4 and later
+-      "react-native-worklets/plugin",
+-    ],
++  // Only add if react-native-worklets is available
++  try {
++    require.resolve("react-native-worklets/plugin");
++    plugins.push("react-native-worklets/plugin");
++  } catch (e) {
++    // react-native-worklets not available, skip it
++  }
++  
++  return {
++    plugins,
+   };
+ };
