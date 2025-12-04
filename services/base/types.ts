@@ -211,3 +211,5 @@ export interface GetTermsRes {
   serviceAgreement: TermsVO;
 }
 
+
+
